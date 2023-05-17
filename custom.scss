@@ -1,0 +1,99 @@
+/*-- scss:defaults --*/
+// importing fonts
+@import url('https://fonts.googleapis.com/css2?family=PTMono&family=Lato&family=OpenSans&display=swap');
+
+// fonts
+$font-family-sans-serif: 'Lato', Tahoma, sans-serif !default;
+
+// headings
+$presentation-heading-font: 'OpenSans',  Tahoma, sans-serif  !default;
+$presentation-heading-color: #344E41 !default;
+$h1-font-size: 1.6em !default;
+$h2-font-size: 1.3em !default;
+$h3-font-size: 1.15em !default;
+
+//code
+$code-color: #588157 !default;
+$font-family-monospace: 'PTMono', monospace  !default;
+
+// general  
+$body-bg: #fff;
+$body-color: #000000;
+$link-color: #588157;
+$presentation-font-size-root: 35px;
+
+/*-- scss:rules --*/
+.reveal pre code {
+  background-color: #dad7cd;
+  font-size: 1em;
+  padding: 0.5em;
+  line-height: 1.2em;
+}
+
+
+.subtitle {
+  color: $body-bg;
+  font-size: $h2-font-size;
+  font-family: $presentation-heading-font;
+}
+
+.author {
+  color: $body-bg;
+  font-size: $h2-font-size;
+  font-family: $presentation-heading-font;
+}
+
+.footer {
+  font-family: $presentation-heading-font;
+}
+
+.reveal .slide-number {
+  font-family: $presentation-heading-font;
+}
+
+.reveal .panel-tabset [role=tab] {
+    font-size: 0.8em;
+}
+
+.reveal .footer {
+    color: #344E41;
+}
+
+.reveal .footer a {
+  color: #344E41;
+  text-shadow: 0 0 1px #344E41;
+} 
+
+.center-x{
+    text-align: center;
+}
+
+section.has-dark-background a, section.has-dark-background a:hover {
+    color: #DAD7CD;
+}
+
+.slide-number, .reveal.has-logo .slide-number {
+  bottom: 10px !important;
+  right: 10px !important;
+  top: unset !important;
+  color: $body-color !important;
+}
+
+.reveal blockquote {
+  border-left:0.25rem #588157;
+  color: #588157;
+  font-family: $font-family-monospace;
+}
+
+.customshadow {
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.mark {
+  background: #9cbc9c !important;
+}
+
+.reveal .del {
+  text-decoration: line-through;
+  color: #d86666 !important;
+}

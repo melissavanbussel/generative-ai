@@ -1,0 +1,1193 @@
+---
+title: "Generative AI for R programmers"
+subtitle: "A [ChatGPT](https://chat.openai.com/chat) and [GitHub CoPilot](https://github.com/features/copilot) Workshop"
+author: "Melissa Van Bussel"
+format: 
+  revealjs:
+    theme: custom.scss
+    footer: "Slides: [https://melissavanbussel.quarto.pub/generative-ai/](https://melissavanbussel.quarto.pub/generative-ai/)  •  YouTube: [@ggnot2](https://www.youtube.com/@ggnot2)  •  Code: [GitHub](https://github.com/melissavanbussel/generative-ai)"
+    include-after-body: clean_title_page.html
+    slide-number: c/t
+    show-slide-number: all
+    title-slide-attributes:
+      data-background-color: "#588157"
+    preview-links: true
+incremental: false
+embed-resources: true
+---
+
+## Outline {auto-animate="true"}
+
+* **Part 1:** Introduction to ChatGPT
+
+* **Part 2:** Using ChatGPT as an R programmer
+
+::: {.r-stack}
+::: {data-id="myimg1" style="position: fixed; bottom: 10%; left: 50%;"}
+
+<img src="chatgpt_logo.png" width="100%">
+
+:::
+::: {data-id="myimg2" style="position: fixed; bottom: 10%; left: 90%; opacity: 0;"}
+
+<img src="copilot_logo.png" width="20%">
+
+:::
+:::
+
+:::{.notes}
+Part 1: What is ChatGPT, and how does it work? Strengths and weaknesses, ethical considerations
+
+Part 2: 3 different ways to use ChatGPT as an R programmer
+:::
+
+## Outline {auto-animate="true"}
+
+* **Part 1:** Introduction to ChatGPT
+
+
+* **Part 2:** Using ChatGPT as an R programmer
+
+
+* **Part 3:** GitHub CoPilot
+
+::: {.r-stack}
+::: {data-id="myimg1" style="position: fixed; bottom: 10%; left: 10%;"}
+
+<img src="chatgpt_logo.png" width="80%">
+
+:::
+::: {data-id="myimg2" style="position: fixed; bottom: 10%; left: 75%; width: 30%;"}
+
+<img src="copilot_logo.png" width="100%">
+
+:::
+:::
+
+:::{.notes}
+Part 3: What it is and why you should care
+:::
+
+# Part 1: Introduction to ChatGPT {background-color="#588157"}
+
+## What is ChatGPT?
+
+* The easiest way to answer this question is to just [ask ChatGPT](https://chat.openai.com/)!
+* Note: Each time you ask this question, you'll receive a different answer.
+
+<blockquote>
+
+I'm giving a presentation at the University of Toronto right now about ChatGPT. The audience is primarily composed of students and professors with a university-level background in Statistics. Can you explain what ChatGPT is and how it works, in a way that's appropriate for this audience?
+
+</blockquote>
+
+## What is ChatGPT? 
+
+<div class="customshadow">
+
+![](what_is_chatgpt.png)
+
+</div>
+
+## How does ChatGPT work? 
+
+The easiest way to understand is to break down the name "ChatGPT".
+
+## How does ChatGPT work? 
+
+The easiest way to understand is to break down the name "Chat<span style="background: #9cbc9c">G</span>PT".
+
+-   <span style="background: #9cbc9c">Generative:</span> Can generate new text from scratch
+
+## How does ChatGPT work? 
+
+The easiest way to understand is to break down the name "ChatG<span style="background: #9cbc9c">P</span>T".
+
+-   Generative: Can generate new text from scratch
+-   <span style="background: #9cbc9c">Pretrained:</span> A Large Language Model (LLM) that's been trained on 45 terabytes of data, including Wikipedia, books, and webpages 
+
+:::{.notes}
+
+For those familiar with the different versions of GPT, GPT-3 which is the largest ChatGPT version, took the equivalent of what would have been 125 years of training if it had been trained on a single GPU. (IRL: took several months)
+
+:::
+
+## How does ChatGPT work? 
+
+The easiest way to understand is to break down the name "ChatGP<span style="background: #9cbc9c">T</span>".
+
+-   Generative: Can generate new text from scratch
+-   Pretrained: A Large Language Model (LLM) that's been trained on 45 terabytes of data, including Wikipedia, books, and webpages 
+-   <span style="background: #9cbc9c">Transformer:</span> A type of neural network
+
+## How does ChatGPT work? 
+
+The easiest way to understand is to break down the name "<span style="background: #9cbc9c">Chat</span>GPT".
+
+-   Generative: Can generate new text from scratch
+-   Pretrained: A Large Language Model (LLM) that's been trained on 45 terabytes of data, including Wikipedia, books, and webpages
+-   Transformer: A type of neural network
+-   <span style="background: #9cbc9c">Chat:</span> ChatGPT is a specific version of the GPT models created by OpenAI, but tailored for **chatting** (trained on both text data and conversational data)
+
+:::{.notes}
+
+conversational data means real human dialogue
+
+:::
+
+## What is ChatGPT **good** at? 
+
+-   Creative writing (emails, documentation, cover letters)
+
+<div class="customshadow">
+
+![](abstract_cropped.png)
+
+</div>
+
+:::{.callout-important}
+
+You should only use ChatGPT to create a **first draft** of a piece of writing.
+
+:::
+
+## What is ChatGPT **good** at?
+
+In this workshop, we will explore the world of generative AI with a focus on two cutting-edge tools: ChatGPT and GitHub CoPilot. Designed for R programmers, we'll dive into the mechanics of these tools, discuss their respective strengths and weaknesses, and delve into the ethical considerations that arise from their use. The workshop will also include a live demo of using ChatGPT and GitHub CoPilot in R, covering several different approaches and highlighting best practices. 
+
+## What is ChatGPT **good** at?
+
+In this workshop, we<span style="text-decoration:line-through; color:#d86666">-wi</span><span style="color:#d86666">'</span>ll explore the world of generative AI with a focus on two <span style="text-decoration:line-through; color:#d86666">cutting-edge</span><span style="color:#d86666">innovative</span> tools: ChatGPT and GitHub CoPilot. <span style="color:#d86666">Designed for R programmers, w</span><span style="text-decoration:line-through; color:#d86666">W</span>e'll <span style="text-decoration:line-through; color:#d86666">dive into</span><span style="color:#d86666">discuss</span> the mechanics of these tools, <span style="text-decoration:line-through; color:#d86666">discuss</span><span style="color:#d86666">dive into</span> their respective strengths and weaknesses, and <span style="text-decoration:line-through; color:#d86666">delve into</span><span style="color:#d86666">explore</span> the ethical considerations that arise from their use. <span style="text-decoration:line-through; color:#d86666">The workshop will also include a live</span><span style="color:#d86666">We'll then </span>demo <span style="text-decoration:line-through; color:#d86666">of</span><span style="color:#d86666">how to</span> us<span style="color:#d86666">e</span><span style="text-decoration:line-through; color:#d86666">ing</span> ChatGPT and GitHub CoPilot <span style="text-decoration:line-through; color:#d86666">in</span><span style="color:#d86666">as an</span> R <span style="color:#d86666">programmer</span>, covering several different approaches and highlighting best practices.
+
+## What is ChatGPT **good** at?
+
+In this workshop, we'll explore the world of generative AI with a focus on two innovative tools: ChatGPT and GitHub CoPilot. We'll discuss the mechanics of these tools, dive into their respective strengths and weaknesses, and explore the ethical considerations that arise from their use. We'll then demo how to use ChatGPT and GitHub CoPilot as an R programmer, covering several different approaches and highlighting best practices.
+
+## What is ChatGPT **good** at? 
+
+- Writing code
+
+<div class="customshadow">
+
+![](shiny_app.png){fig-align="center"}
+
+</div>
+
+::: footer 
+
+::: 
+
+:::{.notes}
+
+It's best for "skeleton-ing" code that you write often. We will talk about best practices and best use cases later. 
+
+:::
+
+## What is ChatGPT **good** at? 
+
+But again, you should only use it to create a **first draft.**
+
+<div class="customshadow">
+  ![](palmerpenguins.png)
+</div>
+
+## What is ChatGPT **good** at? {auto-animate="true"}
+
+The errors are usually fairly easy to fix:
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "3"
+ggplot(penguins, aes_string(x = input$x_axis, 
+                            y = input$y_axis,
+                            color = species)) +
+      geom_point(size = 3) +
+      labs(x = input$x_axis, y = input$y_axis, title = "Palmer Penguins")
+```
+
+## What is ChatGPT **good** at? {auto-animate="true"}
+
+The errors are usually fairly easy to fix:
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "3"
+ggplot(penguins, aes_string(x = input$x_axis, 
+                            y = input$y_axis)) +
+      geom_point(aes(color = species), size = 3) +
+      labs(x = input$x_axis, y = input$y_axis, title = "Palmer Penguins")
+```
+
+## What is ChatGPT <a href="https://melissavanbussel.shinyapps.io/palmerpenguins_demo">**good**</a> at? 
+
+<br> 
+
+<div class="customshadow">
+
+![](shiny_penguins.png)
+</div> 
+
+
+## What is ChatGPT **good** at? 
+
+* Teaching you new concepts 
+
+. . .
+
+* Helping you become a better programmer
+
+. . .
+
+
+:::{.notes}
+
+New concepts: programming or stats 
+
+If you could look it up on Wikipedia, it knows about it. 
+
+It's basically like live documentation, can also use it to debug errors
+
+Also mention Quarto + Shiny.
+
+:::
+
+## What is ChatGPT **bad** at? 
+
+Basically, anything that requires critical thinking or analytical reasoning skills.
+
+<div class="customshadow">
+  ![](lsat.png)
+</div>
+
+# ChatGPT is often <span style="color:#9cbc9c">incorrect,</span> and confident in its incorrect answers.
+
+## What word is missing from this sequence? 
+
+* inch
+* chapel
+* elongate
+* [??????]
+* amaze
+* zebra
+* radius
+* user
+
+:::{.notes}
+
+Give everyone a second to try to figure it out, put your answers in the chat if you know what it is 
+
+:::
+
+## What word is missing from this sequence? 
+
+* in**ch**
+* **ch**ap**el**
+* **el**onga**te**
+* [??????]
+* **am**a**ze**
+* **ze**b**ra**
+* **ra**di**us**
+* **us**er
+
+## What word is missing from this sequence? 
+
+* in**ch**
+* **ch**ap**el**
+* **el**onga**<span style="background: #9cbc9c">te</span>**
+* **<span style="background: #9cbc9c">team</span>**
+* **<span style="background: #9cbc9c">am</span>**a**ze**
+* **ze**b**ra**
+* **ra**di**us**
+* **us**er
+
+## An example of ChatGPT being incorrectly confident
+
+![](elope.jpg)
+
+::: footer
+
+:::
+
+## An example of ChatGPT being incorrectly confident
+
+![](ch.jpg)
+
+::: footer
+
+:::
+
+## The biggest problem here is not that ChatGPT is incorrect, but the level to which it is **confident** in its incorrect answer. 
+
+<div class="customshadow">
+  ![](incorrect.png)
+</div>
+
+::: footer
+
+:::
+
+:::{.notes}
+
+Do a live demo, copy paste the below, then reply with: 
+
+* Your answer is incorrect. (It will correct itself to a new incorrect answer)
+* Do you think your answer is correct? (It will incorrectly justify its incorrect answer)
+* What if I told you the answer is _insert incorrect response_? (It will incorrectly justify that incorrect answer as well)
+
+What word is missing from this sequence? 
+
+inch
+chapel
+elongate
+??????
+amaze
+zebra
+radius
+user
+
+:::
+
+## {auto-animate="true"}
+
+<br>
+<br>
+
+<h2>"Although most people talk about machine learning’s ability to predict the <span style="color:#9cbc9c">future,</span> what it really does is predict the <span style="color:#9cbc9c">past.</span>" <br><br>- Ben Green</h2>
+
+::: footer
+
+:::
+
+:::{.notes}
+
+This quote is a seque into talking about ethical considerations.
+
+It wouldn't be right to give a workshop on ChatGPT and **not** talk about ethical considerations. 
+
+This is something that could be said about any machine learning model, but it's especially true with ChatGPT - it's been trained on publicly available data, so all of the biases that exist in public opinion are, by definition, baked into this model.
+
+:::
+
+## Asking ChatGPT unethical questions
+
+-   Baked in "safety" -- ChatGPT will tell you if a prompt is unethical
+
+![](bullying.jpg)
+
+::: footer
+
+Source: [Silas Alberti (Twitter)](https://twitter.com/SilasAlberti/status/1598264355199778816/photo/1)
+
+:::
+
+:::{.notes}
+
+With that being said, OpenAI has tried to combat this problem by training ChatGPT to reject prompts that it deems as unethical or problematic. In other words, there is safety "baked" in to using ChatGPT: It will tell you if a prompt is unethical.
+
+The one on the screen here is a more tame example, but if you ask ChatGPT something more inappropriate, you'll instead receive a message saying that the prompt violates the terms of service (rather than receiving any response from the chatbot).
+
+:::
+
+## {auto-animate="true"}
+
+<br>
+<br>
+<br>
+
+<h2>But there are ways to "jailbreak" ChatGPT, or <span style="color:#9cbc9c">bypass</span> its filtering system...</h2>
+
+## {auto-animate="true"}
+
+![](bullying_attempt2.jpg){fig-align="center"}
+
+::: footer 
+
+Source: [Silas Alberti (Twitter)](https://twitter.com/SilasAlberti/status/1598270852398600193/photo/2)
+
+:::
+
+## {auto-animate="true"}
+
+![](bullying_attempt3.jpg){fig-align="center"}
+
+::: footer
+
+:::
+
+## Trusting OpenAI
+
+- Even if ChatGPT was able to recognize unethical prompts 100% of the time, we still have to trust OpenAI 
+
+<div class="customshadow">
+  ![](bloomberg.png){fig-align="center"}
+</div>
+::: footer
+
+:::
+
+:::{.notes}
+
+That is, even if ChatGPT could correctly identify prompts that go against OpenAI's Terms of Service, we still have to trust that OpenAI is adequately banning certain types of content. 
+
+This is true of any website that does content moderation, and this can change quickly (e.g., Twitter).
+
+There's also been concerns raised in the media, about OpenAI using confidential user input to update its language model.
+
+This is why a lot of companies are banning it at work, that's probably for the best. As for myself, I would never use it for anything confidential, only use it for fun side projects or code skeletons.
+
+:::
+
+## Trusting OpenAI
+
+- Remember that ChatG<span style="background: #9cbc9c">P</span>T is <span style="background: #9cbc9c">Pretrained</span>, so the model can't update itself based on input the user provides
+
+. . .
+
+- That being said, OpenAI will continue to create new and improved models
+
+. . . 
+
+- It's stated directly in their [Terms of Service](https://openai.com/policies/terms-of-use) that OpenAI may use your provided data to "provide and maintain the Services". 
+
+## The Unethical way that ChatGPT was trained to be Ethical
+
+- Because the GPT-3 model had been trained using publicly available data, it was prone to saying some pretty toxic things
+- Needed to feed the model labelled examples of hate speech, violence, abuse, etc.
+
+<div class="customshadow">
+![](unethical_training.png){fig-align="center"}
+</div>
+
+::: footer
+
+:::
+
+## The Unethical way that ChatGPT was trained to be Ethical
+
+- Paid workers between $1.32 and $2.00 per hour
+- All 4 employees interviewed by TIME said they were "mentally scarred by the work" 
+
+:::{.notes}
+
+Won't read the sentences from this article because it's fairly gruesome, but if you read the article, you'll see the sorts of things that people were subjected to in order to train this model.
+
+Long article, but worth the read
+
+:::
+
+## Generation of false information 
+
+<br>
+
+<div class="customshadow">
+  ![](fake_news.png)
+</div>
+
+:::{.notes}
+
+ChatGPT is giving a whole new meaning to "fake news", by literally generating fake news.
+
+:::
+
+## Generation of false information 
+
+- If you ask ChatGPT to provide references or citations for information that it provides to you, it will gladly do so
+
+. . .
+
+- The only problem is that these citations will be made up
+
+. . . 
+
+- Remember: ChatG<span style="background: #9cbc9c">P</span>T is <span style="background: #9cbc9c">Pretrained</span>, it **can't** provide you modern news sources! 
+
+. . .
+
+This is especially concerning given that we know how **confident** ChatGPT is in its incorrect information.
+
+:::{.notes}
+
+It will cite academic papers and articles that don't exist, or news articles that don't exist. It will provide you hyperlinks to sources that lead nowhere, because the links are made up. 
+
+There's also the concern of "fake news" and misinformation generally -- it was trained on publicly available data.
+
+:::
+
+## Stealing content from creators
+
+- There are currently [class-action lawsuits](https://www.newyorker.com/culture/infinite-scroll/is-ai-art-stealing-from-artists) against companies like OpenAI for essentially stealing the work of artists without the "3 C's":
+
+. . .
+
+1. **C**onsent (for their work to be included in the training data)
+
+. . .
+
+2. **C**ompensation (for their work being used to train the model)
+
+. . .
+
+3. **C**redit (for when the model outputs results based off the artist's original content)
+
+:::{.notes}
+
+At the moment, this is primarily about image generation models like DALL-E (or similar models from other companies), but the same logic could be applied elsewhere: 
+
+Do you own your Reddit posts, and do you deserve the 3 C's for that Reddit post? What about authors of books?
+
+:::
+
+## Environmental impact of ChatGPT 
+
+It's difficult to determine the environmental cost of ChatGPT, though people have tried to estimate this:
+
+. . .
+
+* To train GPT-3, the water footprint is [estimated at around **3.5 million** litres of freshwater](https://arxiv.org/pdf/2304.03271.pdf) (an Olympic swimming pool is about 2.5 million)
+
+. . .
+
+* To have a 20-50 question/answer conversation with ChatGPT, this consumes a 500ml bottle of water
+
+. . .
+
+* [Daily carbon footprint](https://towardsdatascience.com/the-carbon-footprint-of-chatgpt-66932314627d#:~:text=Carbon%20footprint%20from%20training%20ChatGPT&text=It%20has%20been%20estimated%20that,552%20tons%20CO2e%20%5B1%5D) of 23.04 kg CO$^2$ emissions ([average Canadian](https://www.worldometers.info/co2-emissions/co2-emissions-per-capita/) = 18.58kg CO$^2$ emissions per **year**)
+
+## {auto-animate="true"}
+
+<br>
+<br>
+
+<h2>"Any tool can be used for <span style="color:#9cbc9c">good</span> or <span style="color:#9cbc9c">bad.</span> It's really the ethics of the artist using it." <br><br>- John Knoll</h2>
+
+::: footer
+
+:::
+
+:::{.notes}
+
+Possibilities are endless, but for example, fraud and social engineering (phising etc.)
+
+Rapid creation of human-sounding propaganda, or intentional misinformation
+
+Could also be used for people without programming skills to commit cybercrime or other kinds of crime.
+
+:::
+
+## Best practices as an R programmer
+
+* **Always** use as a first draft, whether it's generated text or generated code 
+
+. . .
+
+* Check your work
+
+. . .
+
+* Details are your friend
+
+. . .
+
+* Think about word limits
+
+. . .
+
+* Remember that ChatGPT remembers what you say!
+
+:::{.notes}
+
+Now that we're done talking about ethical considerations, it's time for the fun part of the workshop where we talk about using these tools as an R programmer specifically.
+
+Details: Be as specific as possible, also tell it the intended audience or the persona that it should take on. Tell it the desired length and format (e.g., social media post, table). Tell it what information it should include and exclude. 
+
+Word limits: The length of your input is limited based on the model you choose, and the price increases accordingly. gpt-3.5: 4,096 and 0.002/1k, gpt-4, can go up to 32k but 0.06k (30x the price). The length of your output is unlimited though so ask for it to be as long as you want
+
+Remember: chain multiple prompts together to get the best result, tell it when it's wrong. But if it's so broken and wrong, memory/context might be so broken that it's better to start fresh. You can also train it on your own writing style so it sounds more like you.
+
+:::
+
+# Part 2: Using ChatGPT as an R programmer {background-color="#588157"}
+
+## Three main approaches
+
+1.  Browser-based version
+
+. . .
+
+2.  Direct interfacing with OpenAI API
+
+. . .
+
+3.  Using GPTStudio
+
+. . .
+
+No. 2 and No. 3 require an OpenAI API key...
+
+## Understanding usage and pricing
+
+The first step to understanding [pricing for the OpenAI API](https://openai.com/pricing) is understanding "tokens": 
+
+<blockquote>
+
+Multiple models, each with different capabilities and price points. Prices are per 1,000 tokens. You can think of tokens as pieces of words, where 1,000 tokens is about 750 words. This paragraph is 35 tokens.
+
+</blockquote>
+
+## Understanding usage and pricing
+
+-   When you sign up, you'll get \$5.00 worth of credit (expires after 3 months)
+
+. . .
+
+-   Go to `Billing > Usage limits` to set "hard" and "soft" spending caps per month -- you won't accidentally spend too much! 
+
+. . .
+
+-   Recommendation: Use the \$5.00 credit for a project and then monitor your usage throughout the project
+
+:::{.notes}
+
+This used to be $18
+
+Soft cap = you will receive an email notification 
+
+How quick you go through this credit will depend on what models you're using and how you're using them
+
+After the demo, we'll see how much I spent on this presentation to give you a rough sense
+
+:::
+
+## Browser-based version
+
+To use the browser-based version of ChatGPT, go to [https://chat.openai.com/](https://chat.openai.com/) and login or create an account. 
+
+<br>
+
+. . .
+
+**Pros:**
+
+. . .
+
+<span style="color:green">{{< fa square-check >}}</span> Doesn't cost you *any* money 
+
+. . .
+
+<span style="color:green">{{< fa square-check >}}</span> Is easy to use
+
+. . .
+
+<span style="color:green">{{< fa square-check >}}</span> Provides an aesthetically pleasing experience
+
+:::{.notes}
+
+1. Completely free, doesn't use your OpenAI credits, unlike options 2 and 3 (doesn't use up your free trial either)
+
+2. No programming experience, no API key
+
+:::
+
+## Browser-based version 
+
+**Cons:**
+
+. . .
+
+<span style="color:red">{{< fa circle-xmark >}}</span> Lots of manual copy-pasting, and...
+
+. . .
+
+ <div class="customshadow">
+![](at_capacity.png)
+</div>
+
+:::{.notes}
+
+Basically, you won't reliably be able to use the browser-based version during core working hours (M-F 9-5). You can use it on evenings and weekends. 
+
+This problem is also getting worse since they've rolled out a program where you pay for priority access.
+
+Best workaround is options (2) and (3), both of which require API key.
+
+:::
+
+## Creating your OpenAI API key
+
+-   Go to [platform.openai.com](platform.openai.com) and create an account
+
+. . .
+
+-   Go to Personal \> View API keys
+
+. . .
+
+-   Create new secret key (make sure you save it)
+
+<div class="customshadow">
+  ![](create_api_key.png){fig-align="center"}
+</div>
+
+::: footer
+
+:::
+
+:::{.notes}
+
+You will only be able to view it once. 
+
+Also note you should not share this with ANYONE or put it in your code directly. Not only can they charge money to your account but it also goes against their terms of service. This is a secret password! 
+
+:::
+
+## Using the OpenAI API directly
+
+You can use R to access ChatGPT through the OpenAI API. This is great when...
+
+<br>
+
+. . .
+
+<span style="color:green">{{< fa square-check >}}</span> You get the "ChatGPT is at capacity right now" message and you don't mind paying money (or using your free trial) in order to avoid this
+
+. . .
+
+<span style="color:green">{{< fa square-check >}}</span> You want more control over the answers that ChatGPT provides (tuning parameters)
+
+. . .
+
+<span style="color:green">{{< fa square-check >}}</span> You want to incorporate ChatGPT into [a Shiny app](https://melissavanbussel.shinyapps.io/talk_to_chatgpt)
+
+:::{.notes}
+
+Parameter tuning (for example): can control the length of the response from ChatGPT, which model is being used, and whether or not the conversation history is remembered.
+
+Copy-paste api key
+
+:::
+
+## Using the OpenAI API directly
+
+There's a package called `gptchatteR` [available on GitHub](https://github.com/isinaltinkaya/gptchatteR) that contains a wrapper for interacting with OpenAI's GPT models in R.
+
+{{< video https://www.youtube.com/watch?v=B_Fbd_vxZyE width="889" height="500">}}
+
+::: footer
+
+:::
+
+## Using the OpenAI API directly {auto-animate="true"}
+
+**Step 1:** Install dependencies 
+
+```{r}
+#| eval: false
+#| echo: true
+#| auto-animate: true
+# Required any time you interact with the OpenAI API
+install.packages("openai")
+```
+
+## Using the OpenAI API directly {auto-animate="true"}
+
+**Step 1:** Install dependencies 
+
+```{r}
+#| eval: false
+#| echo: true
+# Required any time you interact with the OpenAI API
+install.packages("openai")
+
+# Required for installing packages from GitHub 
+# (Alternatively, can use the "remotes" package)
+install.packages("devtools")
+```
+
+## Using the OpenAI API directly {auto-animate="true"}
+
+**Step 1:** Install dependencies 
+
+```{r}
+#| eval: false
+#| echo: true
+# Required any time you interact with the OpenAI API
+install.packages("openai")
+
+# Required for installing packages from GitHub 
+# (Alternatively, can use the "remotes" package)
+install.packages("devtools")
+
+# Install package that contains wrapper functions for ChatGPT
+library(devtools)
+install_github("isinaltinkaya/gptchatteR")
+```
+
+## Using the OpenAI API directly {auto-animate="true"}
+
+**Step 2:** Provide your API key
+
+```{r}
+#| eval: false
+#| echo: true
+# Load package that contains wrapper for ChatGPT
+library(gptchatteR)
+```
+
+## Using the OpenAI API directly {auto-animate="true"}
+
+**Step 2:** Provide your API key
+
+```{r}
+#| eval: false
+#| echo: true
+# Load package that contains wrapper for ChatGPT
+library(gptchatteR)
+
+# Replace the below with your OpenAI API key
+chatter.auth("YOUR API KEY GOES HERE")
+```
+
+. . .
+
+:::{.callout-important}
+
+Remember to never include your secret key in your code directly.
+
+:::
+
+## Using the OpenAI API directly {auto-animate="true"}
+
+**Step 3:** Talk to ChatGPT
+
+```{r}
+#| echo: true
+#| eval: false
+# Initiate chat session with ChatGPT; type ?chatter.create for additional options
+chatter.create(model = "text-davinci-003")
+```
+
+:::{.notes}
+
+By default, the wrapper function is using the text-davinci-003 model, but can change this by changing the model argument of the chatter.create function
+
+The gptchatteR package only supports models in the "v1/completions" endpoint (does not include gpt-4)
+
+:::
+
+## Using the OpenAI API directly {auto-animate="true"}
+
+**Step 3:** Talk to ChatGPT
+
+```{r}
+#| echo: true
+#| eval: false
+# Initiate chat session with ChatGPT; type ?chatter.create for additional options
+chatter.create(model = "text-davinci-003")
+
+# Talk to ChatGPT 
+response <- chatter.chat("What is the meaning of life?", return_response = TRUE)
+```
+
+## Using the OpenAI API directly {auto-animate="true"}
+
+**Step 3:** Talk to ChatGPT
+
+```{r}
+#| echo: true
+#| eval: false
+# Initiate chat session with ChatGPT; type ?chatter.create for additional options
+chatter.create(model = "text-davinci-003")
+
+# Talk to ChatGPT 
+response <- chatter.chat("What is the meaning of life?", return_response = TRUE)
+
+# Extract the response from ChatGPT
+response$choices[[1]]
+```
+
+## `gptstudio`
+
+`gptstudio` is an R package that contains add-ins that let you work with ChatGPT through a point-and-click system in RStudio. 
+
+<br>
+
+```{r}
+#| echo: true
+#| eval: false
+library(openai)
+Sys.setenv(OPENAI_API_KEY = "YOUR API KEY GOES HERE")
+```
+
+<br> 
+
+Alternatively, you can include this in a `.Renviron` file of your project, if you use one.
+
+:::{.notes}
+
+Before you can use gptstudio, you need to provide your API key to the openai package.
+
+With the .Renviron file, each time you open that project you won't need to define your API key (be careful to include that in your gitignore).
+
+:::
+
+## `gptstudio`
+
+The `gptstudio` package is available on [GitHub](https://github.com/MichelNivard/gptstudio). To install the package, you can use the following code:
+
+```{r}
+#| eval: false
+#| echo: true
+# Install gptstudio from GitHub
+library(remotes)
+install_github("MichelNivard/GPTstudio")
+```
+
+* Before installing `gptstudio`, make sure you have the most up-to-date version of RStudio installed. 
+
+* Once installed, close and restart RStudio, and then you should be able to use `gptstudio` by going to `Addins > GPTSTUDIO` in RStudio.
+
+:::{.notes}
+
+Next slide is where demo will start.
+
+:::
+
+## `gptstudio`: Spelling and Grammar
+
+* With the `gptstudio` package, you can easily check your spelling and grammar in RStudio. Simply highlight the text you want to check, and then go to `Addins > GPTStudio > Spelling and Grammar`.
+
+* Spelling and grammar will automatically be corrected in-line, and the results will also be printed to the console.
+
+* Additionally, `gptstudio` will tell you how many tokens you used to perform this action.
+
+:::{.notes}
+
+Here's a demo. Spelling, then turning comments into code
+
+:::
+
+## `gptstudio`: Turning comments into code
+
+With the `gptstudio` package, you can quickly turn your comments into code. You can use this feature in the same way that you used the "Spelling and grammar" feature.
+
+:::{.callout-note}
+
+There used to be a "Write code from prompt" option, but this is no longer available. Instead, use "Comment your code".
+
+:::
+
+## Example
+
+<blockquote>
+
+\# Create a scatterplot of the palmerpenguins dataset with bill length along the x-axis and bill depth along the y-axis, using ggplot 
+
+</blockquote>
+
+becomes...
+
+## {auto-animate="true"}
+
+```{r}
+#| eval: true
+#| echo: true
+# load the palmerpenguins package
+library(palmerpenguins)
+
+# load the ggplot2 package
+library(ggplot2)
+
+# create a scatterplot of the palmerpenguins dataset with bill length along the x-axis 
+# and bill depth along the y-axis, using ggplot 
+ggplot(data = penguins, 
+       aes(x = bill_length_mm, y = bill_depth_mm)) + geom_point()
+```
+
+::: footer 
+
+:::
+
+## `gptstudio`: Using ChatGPT in the RStudio Viewer
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+With the `gptstudio` package, you can also use ChatGPT as a Shiny app. 
+
+:::{.callout-tip}
+
+Before using this feature, make sure all your packages are updated.
+
+:::
+
+To use ChatGPT, go to `Addins > GPTStudio > ChatGPT`.
+
+:::
+
+:::  {.column width="50%"}
+
+<div class="customshadow">
+
+![](gptstudio_chatgpt.png)
+
+</div> 
+
+:::
+
+:::
+
+## How much was spent today? 
+
+To get a better sense of how expensive it was to create this presentation, we can check my [API usage](https://platform.openai.com/account/usage) for the month of May. 
+
+:::{.callout-note}
+
+Remember, this only includes: 
+
+* Using the ChatGPT Shiny app that I had created
+* Using `gptstudio` from within RStudio
+
+Anything done in the browser-based version was **free**.
+
+:::
+
+# Part 3: GitHub CoPilot {background-color="#588157"}
+
+## What is [CoPilot](https://github.com/features/copilot)?
+
+GitHub CoPilot is a collaboration between GitHub and OpenAI. It generates code suggestions in real-time, **directly within your IDE**. It can do things like...
+
+. . .
+
+-   Convert comments to code
+
+. . . 
+
+-   Automatically suggest what code should come next
+
+. . .
+
+-   Show you code alternatives
+
+. . .
+
+CoPilot has a flat rate fee of $10/month for individuals.
+
+:::{.notes}
+
+Just like with ChatGPT, always use it as a first draft and do a careful code review.
+
+:::
+
+## Why should you care?
+
+* CoPilot is specifically designed to assist with writing **code**, whereas ChatGPT is a **general-purpose** language model
+
+. . .
+
+* CoPilot's training data is comprised of open source code from GitHub, so the model has a better understanding of code conventions
+
+. . .
+
+* The integration with IDEs solves the "copy paste" problem with ChatGPT
+
+:::{.notes}
+
+If ChatGPT is so great, why care about CoPilot? 
+
+:::
+
+# R is to Python as CoPilot is to ChatGPT
+
+:::{.notes}
+
+R is a *statistical* programming language, so it's better at *Statistics*, Python is more general
+
+:::
+
+## IDE integration 
+
+Unfortunately, there's no CoPilot integration in RStudio. You'll need to use one of the following: 
+
+* Visual Studio Code (VS Code)
+* Visual Studio
+* A compatible JetBrains IDE
+* Neovim
+
+:::{.notes}
+
+JetBrains is a company with many IDEs including IntelliJ, PyCharm, ...
+
+:::
+
+## [Keyboard Shortcuts](https://docs.github.com/en/copilot/configuring-github-copilot/configuring-github-copilot-in-your-environment#keyboard-shortcuts-for-windows) for GitHub CoPilot (on Windows)
+
+<br>
+
+| Action                              | Shortcut    |
+| ----------------------------------- | ----------- |
+| Accept an inline suggestion         | `Tab`       |
+| Dismiss an inline suggestion        | `Esc`       |
+| Show next inline suggestion         | `Alt+]`     |
+| Show previous inline suggestion     | `Alt+[`     |
+| Trigger inline suggestion           | `Alt+\`     |
+
+## GitHub CoPilot Live Demo
+
+{{< video https://www.youtube.com/watch?v=NGM7Z1Dd9fE width="889" height="500">}}
+
+```{r}
+#| eval: false
+# Load package that contains the penguins dataset
+library(palmerpenguins)
+
+# Load the tidyverse
+library(tidyverse)
+
+# Drop missing values
+penguins <- penguins %>% drop_na()
+
+# Create a new column called "body_mass_kg" that contains the body mass in kg instead of grams
+penguins <- penguins %>% mutate(body_mass_kg = body_mass_g / 1000)
+
+# Fit a simple linear regression model
+model <- lm(body_mass_kg ~ bill_length_mm, data = penguins)
+
+# Plot the data and the model
+ggplot(penguins, aes(x = bill_length_mm, y = body_mass_kg)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "Bill length (mm)", y = "Body mass (kg)")
+```
+
+:::{.notes}
+
+Will skip over the set up and installation steps, they are in the video
+
+:::
+
+## References
+
+- [How to talk to ChatGPT using R, for FREE!](https://www.youtube.com/watch?v=B_Fbd_vxZyE)
+- [GitHub CoPilot for R - First impressions](https://www.youtube.com/watch?v=NGM7Z1Dd9fE)
+- [David Smith - Copilot for R](https://www.youtube.com/watch?v=XQ4Negbmtk4)
+- [Adding ChatGPT to RStudio with the GPT Studio add-in package](https://www.youtube.com/watch?v=QQfDTLExoNU)
+- [Unpacking ChatGPT (Canada School of Public Service)](https://catalogue.csps-efpc.gc.ca/product?catalog=DDN1-E01&cm_locale=en)
+
+# Thank You!
+
+<span style="color:red">
+{{< fa brands youtube >}}</span> [@ggnot2](https://www.youtube.com/@ggnot2)
+
+{{< fa globe >}} [melissavanbussel.com](https://www.melissavanbussel.com/)
+
+<span style="color:#00ACEE">
+{{< fa brands twitter >}}</span> [@melvanbussel](https://twitter.com/melvanbussel)
+
+<span style="color:#0e76a8">
+{{< fa brands linkedin >}}</span> [@melissavanbussel](https://www.linkedin.com/in/melissavanbussel/)
+
+{{< fa brands github >}} [github.com/melissavanbussel](https://github.com/melissavanbussel)
